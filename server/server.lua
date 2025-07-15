@@ -8,7 +8,7 @@ lib.versionCheck(("Monarch-Development/%s"):format(expectedName))
 AddEventHandler("onResourceStart", function(resourceName)
     if nameNow ~= resourceName then return end
 
-    if nameNow ~= ExpectedName then
-        print(("^1[WARNING]: The resource name is incorrect. Please set it to %s.^0"):format(ExpectedName))
+    if nameNow ~= expectedName then
+        print(("^1[WARNING]: The resource name is incorrect. Please set it to %s.^0"):format(expectedName))
     end
 end)
