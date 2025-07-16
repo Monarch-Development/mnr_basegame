@@ -1,7 +1,6 @@
 local dispatch = lib.load("config.client.dispatch")
 local hud = lib.load("config.client.hud")
 local idlecamera = lib.load("config.client.idlecamera")
-local models = lib.load("config.client.models")
 local pickups = lib.load("config.client.pickups")
 local scenarioGroups = lib.load("config.client.scenariogroups")
 local scenarioTypes = lib.load("config.client.scenariotypes")
@@ -19,11 +18,6 @@ end
 ---@description IDLE CAMERA DISABLER
 DisableIdleCamera(idlecamera.afk)
 DisableVehiclePassengerIdleCamera(idlecamera.vehicle)
-
----@description MODELS DISABLER
-for model, toggle in ipairs(models) do
-    SetVehicleModelIsSuppressed(model, toggle)
-end
 
 ---@description HUD COMPONENTS DISABLER
 for component, size in ipairs(hud) do
