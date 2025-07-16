@@ -29,23 +29,6 @@ for hash, toggle in ipairs(pickups) do
     ToggleUsePickupsForPlayer(cache.playerId, hash, toggle)
 end
 
----@description RADIO/AUTOSHUFFLE SEAT DISABLER
-lib.onCache("seat", function(seat)
-    if seat == -1 and cache.vehicle then
-        SetUserRadioControlEnabled(false)
-
-        if GetPlayerRadioStationIndex() ~= 255 then
-            SetVehRadioStation(cache.vehicle, "OFF")
-        end
-    end
-
-    SetPedConfigFlag(cache.ped, 184, true)
-
-    if cache.vehicle and not cache.seat then
-        SetPedIntoVehicle(cache.ped, cache.vehicle, seat)
-    end
-end)
-
 ---@description SCENARIO GROUPS DISABLER
 for scenarioGroup, toggle in pairs(scenarioGroups) do
     SetScenarioGroupEnabled(scenarioGroup, toggle)
